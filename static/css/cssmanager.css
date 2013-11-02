@@ -7,8 +7,7 @@
     font-family: Georgia;
     color: #ba0fba;
     background-color: #eee
-    }
-
-#tabslideout-close, .pan li,ul {
+}
+#tabslideout-close, .pan li, ul {
     cursor:pointer
 }

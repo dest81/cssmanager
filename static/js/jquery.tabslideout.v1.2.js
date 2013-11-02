@@ -152,10 +152,11 @@
                 slideIn();
                 obj.css('overflow', 'visible');
             });
+
             $("#tabslideout-close").click(function(){
-                            slideIn();
-                            obj.css('overflow', 'visible');
-                        });
+                slideIn();
+                obj.css('overflow', 'visible');
+            });
         };
         
         var clickAction = function(){

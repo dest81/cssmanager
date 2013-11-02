@@ -1,5 +1,9 @@
 <h4>Selectors</h4>
-        {% if back %}<li par="{{ back }}">..</li>{% endif %}
-        {% for d in selectors %}
-                <ul par="{{ pathpar }}">{{ d }}</ul>
-        {% endfor %}
+
+{% if back %}
+    <li par="{{ back }}">..</li>
+{% endif %}
+
+{% for d in selectors %}
+    <ul par="{{ pathpar }}">{{ d }}</ul>
+{% endfor %}

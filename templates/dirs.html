@@ -1,11 +1,16 @@
 <h4>Catalog</h4>
-        {% if back %}<li par="{{ back }}">..</li>{% endif %}
-        {% for path, d  in dirs.items %}
-                <li par="{{ path }}">{{ d }}</li>
-        {% endfor %}
+
+{% if back %}
+    <li class="dir" par="{{ back }}">..</li>
+{% endif %}
+
+{% for path, d in dirs.items %}
+    <li class="dir" par="{{ path }}">{{ d }}</li>
+{% endfor %}
+
 {% if files %}
     <h4>Files</h4>
         {% for path, d  in files.items %}
-            <li par="{{ path }}">{{ d }}</li>
+            <li class="file" par ="{{ path }}">{{ d }}</li>
         {% endfor %}
 {% endif %}
