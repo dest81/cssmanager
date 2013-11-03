@@ -47,7 +47,7 @@ class SubmitTest(unittest.TestCase):
     def setUp(self):
         self.client = Client()
 
-    def test_details(self):
+    def test_view_submitcss(self):
         kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
         file = os.path.join(settings.STATIC_ROOT, 'css\\test.css')
         self.client.session['file'] = file

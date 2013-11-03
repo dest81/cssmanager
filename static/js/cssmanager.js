@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     // Вибір директорії файл-бравзера
     $('.pan').on( 'click', '.dir', function( event ) {
-       $.ajax({
+        $.ajax({
             url: "/cssmanager/dirscss/",
             data: "dir=" + encodeURIComponent($(this).attr('par')),
             success: function( html ){
@@ -35,22 +35,20 @@ $(document).ready(function() {
         });
     });
 
-    // Вибір директорії файл-бравзера
+    // Вибір файлу файл-бравзера
     $('.pan').on( 'click', '.file', function( event ) {
-       $.ajax({
+        $.ajax({
             url: "/cssmanager/dirscss/",
             data: "dir=" + encodeURIComponent($(this).attr('par')),
             success: function( data ){
-                var str = "";
-                str = str + "<li class='dir' par=" + data.back + ">..</li>"
                 var items = [];
+                items.push( "<li class='dir' par=" + data.back + ">..</li>" );
                 $.each( data.selectors, function( key, val ) {
                     if($(val).get() != ''){
-                        str = str + "<ul par=" + data.pathpar + ">" + val + "</ul>"
+                        items.push( "<ul par=" + data.pathpar + ">" + val + "</ul>" );
                     }
                 });
-
-                $("#listcss").html( str );
+                $("#listcss").html( items );
             }
         });
     });
